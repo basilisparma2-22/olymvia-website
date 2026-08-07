@@ -671,3 +671,103 @@ img {
     background: var(--secondary-color);
 
 }
+
+/* ==========================
+   TEAM SECTION
+========================== */
+
+.team{
+    padding:100px 60px;
+    background:white;
+    text-align:center;
+}
+
+.team h2{
+    font-size:40px;
+    margin-bottom:60px;
+}
+
+.team-container{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:35px;
+}
+
+.team-card{
+
+    width:280px;
+
+    background:var(--light-color);
+
+    padding:35px 25px;
+
+    border-radius:20px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+    transition:.3s;
+}
+
+.team-card:hover{
+
+    transform:translateY(-10px);
+}
+
+.team-card img{
+
+    width:140px;
+
+    height:140px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    margin:0 auto 25px;
+
+    border:5px solid var(--secondary-color);
+}
+
+.team-card h3{
+
+    color:var(--primary-color);
+
+    margin-bottom:8px;
+}
+
+.team-card span{
+
+    display:block;
+
+    color:var(--green-color);
+
+    font-weight:600;
+
+    margin-bottom:18px;
+}
+
+.team-card p{
+
+    color:#555;
+
+    line-height:1.6;
+}
+
+@media(max-width:768px){
+
+.team{
+
+padding:60px 20px;
+
+}
+
+.team-card{
+
+width:100%;
+
+max-width:340px;
+
+}
+
+}
