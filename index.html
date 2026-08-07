@@ -26,6 +26,7 @@
 
     <link rel="icon" type="image/png" href="images/favicon.png">
 
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 </head>
 
 <body>
@@ -160,42 +161,110 @@
 
     <h2>Meet Our Team</h2>
 
+    <div class="team-slider-wrapper">
+
     <div class="team-container">
 
         <div class="team-card">
-            <img src="troll1.jpg" alt="Team member">
+            <img src="images/troll5.jpg" alt="Team member">
             <h3>Lana</h3>
             <span>President</span>
-            <p>Short description about this member.</p>
+            <p>queeeeen slay</p>
         </div>
 
         <div class="team-card">
-            <img src="troll2.jpg" alt="Team member">
+            <img src="images/troll4.jpg" alt="Team member">
             <h3>Ακης Πετρετζικης</h3>
             <span>Project Manager</span>
-            <p>Short description about this member.</p>
+            <p>μαγειρεύει γενικά και έτσι</p>
         </div>
 
         <div class="team-card">
-            <img src="troll3.jpg" alt="Team member">
+            <img src="/images/troll3.jpg" alt="Team member">
             <h3>Σακης Αρναουτογλου</h3>
             <span>Youth Worker</span>
-            <p>Short description about this member.</p>
+            <p>Βλέπει τον καιρό</p>
         </div>
 
         <div class="team-card">
-            <img src="troll4.jpg" alt="Team member">
+            <img src="images/troll2.jpg" alt="Team member">
             <h3>Αλεξης Τσιπρας</h3>
             <span>Coordinator</span>
-            <p>Short description about this member.</p>
+            <p>Βλέπει το μέλλον</p>
         </div>
 
         <div class="team-card">
-            <img src="troll5.jpg" alt="Team member">
+            <img src="images/troll1.jpg" alt="Team member">
             <h3>Γιωργος Σαμαρας</h3>
             <span>Volunteer Coordinator</span>
-            <p>Short description about this member.</p>
+            <p>Δεν βλέπει (έχει μυωπία)</p>
         </div>
+
+    </div>
+
+    
+</div>
+
+<button class="slider-btn team-next">
+        →
+    </button>
+
+    
+</section>
+
+
+<section class="map-section">
+
+    <h2>Our International Network</h2>
+
+    <p>
+        We collaborate with organizations and participants across Europe.
+    </p>
+
+    <div id="map"></div>
+
+    <div class="map-legend">
+
+    <div>
+        <span class="legend-dot yellow"></span>
+        Headquarters
+    </div>
+
+    <div>
+        <span class="legend-dot blue"></span>
+        Partner Organizations
+    </div>
+
+    <div>
+        <span class="legend-dot purple"></span>
+        Training Partners
+    </div>
+
+    <div>
+        <span class="legend-dot green"></span>
+        Projects
+    </div>
+
+</div>
+
+</section>
+
+<section class="gallery hidden" id="gallery">
+
+    <h2 class="hidden">Moments From Our Projects</h2>
+
+    <p class="hidden">
+        Discover highlights from our activities, exchanges and international experiences.
+    </p>
+
+    <div class="gallery-container">
+
+        <img class="hidden" src="images/gallery1.jpg" alt="Erasmus project">
+        <img class="hidden" src="images/gallery2.jpg" alt="Youth exchange">
+        <img class="hidden" src="images/gallery3.jpg" alt="Group activity">
+        <img class="hidden" src="images/gallery4.jpg" alt="European project">
+        <img class="hidden" src="images/gallery5.jpg" alt="Workshop">
+        <img class="hidden" src="images/gallery6.jpg" alt="Outdoor activity">
 
     </div>
 
@@ -240,6 +309,59 @@
                 Εθελοντικές δράσεις που ενισχύουν
                 την ενεργή συμμετοχή και την κοινωνική προσφορά.
             </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="testimonials hidden" id="testimonials">
+
+    <h2 class="hidden">What Participants Say</h2>
+
+    <p class="hidden">
+        Experiences and stories from young people who joined our projects.
+    </p>
+
+
+    <div class="testimonial-container">
+
+        <div class="testimonial-card hidden">
+
+            <p>
+                "This experience changed the way I see Europe.
+                I met amazing people and learned so much from different cultures."
+            </p>
+
+            <h3>Maria</h3>
+            <span>🇪🇸 Spain - Youth Exchange Participant</span>
+
+        </div>
+
+
+        <div class="testimonial-card hidden">
+
+            <p>
+                "The project helped me develop new skills,
+                become more confident and create friendships that last."
+            </p>
+
+            <h3>Luca</h3>
+            <span>🇮🇹 Italy - Erasmus+ Participant</span>
+
+        </div>
+
+
+        <div class="testimonial-card hidden">
+
+            <p>
+                "A unique opportunity to connect, learn and take action
+                for a more sustainable future."
+            </p>
+
+            <h3>Sophie</h3>
+            <span>🇩🇪 Germany - Training Course Participant</span>
 
         </div>
 
@@ -359,7 +481,11 @@
 
 </footer>
 
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
 <script src="script.js"></script>
+
+
 
 </body>
 </html>
