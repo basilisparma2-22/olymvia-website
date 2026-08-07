@@ -129,34 +129,89 @@ countries.forEach(country => {
 
 });
 
+const teamContainer = document.querySelector(".team-container");
 const teamNext = document.querySelector(".team-next");
+const teamPrev = document.querySelector(".team-prev");
 
-if(teamNext){
+if(teamContainer && teamNext && teamPrev){
 
-teamNext.addEventListener("click", ()=>{
+    teamNext.addEventListener("click", ()=>{
 
-    document.querySelector(".team-container")
-    .scrollBy({
-        left:300,
-        behavior:"smooth"
+        teamContainer.scrollBy({
+            left: teamContainer.clientWidth,
+            behavior:"smooth"
+        });
+
     });
 
-});
 
-const galleryNext = document.querySelector(".gallery-next");
+    teamPrev.addEventListener("click", ()=>{
 
-if(galleryNext){
-
-    galleryNext.addEventListener("click", ()=>{
-
-        document.querySelector(".gallery-container")
-        .scrollBy({
-            left: window.innerWidth,
+        teamContainer.scrollBy({
+            left: -teamContainer.clientWidth,
             behavior:"smooth"
         });
 
     });
 
 }
+
+const galleryNext = document.querySelector(".gallery-next");
+const galleryPrev = document.querySelector(".gallery-prev");
+
+const gallery = document.querySelector(".gallery-container");
+
+
+if(galleryNext){
+
+galleryNext.addEventListener("click", ()=>{
+
+    gallery.scrollBy({
+        left: gallery.clientWidth,
+        behavior:"smooth"
+    });
+
+});
+
+}
+
+
+if(galleryPrev){
+
+galleryPrev.addEventListener("click", ()=>{
+
+    gallery.scrollBy({
+        left: -window.innerWidth,
+        behavior:"smooth"
+    });
+
+});
+
+}
+
+const testimonialContainer = document.querySelector(".testimonial-container");
+const testimonialNext = document.querySelector(".testimonial-next");
+const testimonialPrev = document.querySelector(".testimonial-prev");
+
+if(testimonialContainer && testimonialNext && testimonialPrev){
+
+    testimonialNext.addEventListener("click", ()=>{
+
+        testimonialContainer.scrollBy({
+            left: testimonialContainer.clientWidth,
+            behavior:"smooth"
+        });
+
+    });
+
+
+    testimonialPrev.addEventListener("click", ()=>{
+
+        testimonialContainer.scrollBy({
+            left: -testimonialContainer.clientWidth,
+            behavior:"smooth"
+        });
+
+    });
 
 }
