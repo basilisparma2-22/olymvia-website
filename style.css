@@ -937,37 +937,6 @@ img {
         flex-shrink: 0;
     }
 
-    .slider-btn {
-        display: flex !important;
-        position: absolute;
-        top: 45%;
-        transform: translateY(-50%);
-
-        width: 45px;
-        height: 45px;
-
-        border-radius: 50%;
-        border: none;
-
-        background: rgba(18,52,71,.6);
-        color: white;
-
-        font-size: 25px;
-
-        align-items: center;
-        justify-content: center;
-
-        z-index: 10;
-    }
-
-    .team-prev {
-        left: 5px;
-    }
-
-    .team-next {
-        right: 5px;
-    }
-
     .testimonials {
         padding: 80px 20px;
         width: 100%;
@@ -996,32 +965,6 @@ img {
         box-sizing:border-box;
     }
 
-    .testimonial-next {
-        display:flex !important;
-        position:absolute;
-        right:10px;
-        top:50%;
-        transform:translateY(-50%);
-
-        width:45px;
-        height:45px;
-
-        border-radius:50%;
-        border:none;
-
-        background:rgba(18,52,71,0.7);
-        color:white;
-
-        font-size:30px;
-
-        align-items:center;
-        justify-content:center;
-
-        z-index:10;
-    }
-
-
-
     .gallery-slider-wrapper {
     width:100%;
     overflow:hidden;
@@ -1041,62 +984,99 @@ img {
         flex-shrink:0;
     }
 
+    .slider-btn,
+    .gallery-prev,
     .gallery-next,
-    .gallery-prev {
+    .testimonial-prev,
+    .testimonial-next {
 
         display:flex !important;
         position:absolute;
-        
+
         top:50%;
         transform:translateY(-50%);
 
-        width:45px;
-        height:45px;
+        width:40px;
+        height:60px;
 
-        border-radius:50%;
         border:none;
+        background:transparent;
 
-        background:rgba(18,52,71,0.7);
         color:white;
-
-        font-size:30px;
 
         align-items:center;
         justify-content:center;
 
-        z-index:10;
+        z-index:20;
 
-    }   
+        cursor:pointer;
 
-    .gallery-next {
-        right:10px;
     }
 
-    .gallery-prev {
-        left:10px;
+    .slider-btn:hover,
+    .gallery-prev:hover,
+    .gallery-next:hover,
+    .testimonial-prev:hover,
+    .testimonial-next:hover{
+
+        background:#123447;
+        transform:translateY(-50%) scale(1.08);
+
     }
 
     .team-prev,
-    .team-next {
-        display: flex !important;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 20;
+    .gallery-prev,
+    .testimonial-prev{
+        left:10px;
     }
 
-    .team-prev {
-        left: 10px;
+    .team-next,
+    .gallery-next,
+    .testimonial-next{
+        right:10px;
     }
 
-    .team-next {
-        right: 10px;
+    .slider-btn svg,
+    .gallery-prev svg,
+    .gallery-next svg,
+    .testimonial-prev svg,
+    .testimonial-next svg {
+
+        width:28px;
+        height:28px;
+
+        fill:none;
+        stroke:white;
+        stroke-width:2;
+        stroke-linecap:round;
+        stroke-linejoin:round;
+
+        filter:drop-shadow(0 2px 4px rgba(0,0,0,.6));
+
+        .slider-btn svg {
+        display:block;
+        width:30px;
+        height:30px;
+        stroke:red;
+        stroke-width:4;
+        fill:none;
+        }
+
+
+
     }
 
 }
 
 
-  
+
+}
+
+.gallery-prev,
+.gallery-next,
+.testimonial-prev,
+.testimonial-next {
+    display: none;
 }
 
 
