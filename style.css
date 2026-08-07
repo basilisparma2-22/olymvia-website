@@ -238,7 +238,7 @@ button:hover {
     margin-top: 10px;
 }
 
-/* Mobile Responsive Design */
+/* Mobile Responsive Design ΠΑΛΙΟ*/
 
 @media (max-width: 768px) {
 
@@ -363,8 +363,9 @@ button:hover {
         width: 100%;
         font-size: 16px;
     }
-
 }
+
+/* Mobile Responsive Design ΠΑΛΙΟ ΤΕΛΟΣ*/
 
 /* Contact Section */
 
@@ -965,20 +966,102 @@ img {
         overflow: hidden;
     }
 
+    .testimonial-slider-wrapper {
+        width:100%;
+        overflow:hidden;
+        position:relative;
+    }
+
     .testimonial-container {
-        display: flex;
-        overflow: hidden;
+        display:flex;
+        flex-wrap:nowrap;
+        overflow:hidden;
+        gap:20px;
         width: 100%;
-        gap: 20px;
+    
     }
 
     .testimonial-card {
-        min-width: 100%;
-        width: 100%;
-        box-sizing: border-box;
+        min-width:100%;
+        width:100%;
+        flex-shrink:0;
+        box-sizing:border-box;
     }
 
+    .testimonial-next {
+        display:flex !important;
+        position:absolute;
+        right:10px;
+        top:50%;
+        transform:translateY(-50%);
+
+        width:45px;
+        height:45px;
+
+        border-radius:50%;
+        border:none;
+
+        background:rgba(18,52,71,0.7);
+        color:white;
+
+        font-size:30px;
+
+        align-items:center;
+        justify-content:center;
+
+        z-index:10;
+    }
+
+
+
+    .gallery-slider-wrapper {
+    width:100%;
+    overflow:hidden;
+    position:relative;
+    }
+
+    .gallery-container {
+        display:flex;
+        flex-wrap:nowrap;
+        overflow:hidden;
+        gap:20px;
+    }
+
+    .gallery-container img {
+        min-width:100%;
+        width:100%;
+        flex-shrink:0;
+    }
+
+    .gallery-next {
+    display:flex;
+    position:absolute;
+    right:10px;
+    top:50%;
+    transform:translateY(-50%);
+
+    width:45px;
+    height:45px;
+
+    border-radius:50%;
+    border:none;
+
+    background:rgba(18,52,71,0.6);
+    color:white;
+
+    font-size:30px;
+
+    align-items:center;
+    justify-content:center;
+
+    z-index:10;
+
+
+    }
+  
 }
+
+
 
 /* ==========================
    END OF MOBILE

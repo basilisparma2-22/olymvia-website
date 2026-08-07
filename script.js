@@ -143,4 +143,20 @@ teamNext.addEventListener("click", ()=>{
 
 });
 
+const galleryNext = document.querySelector(".gallery-next");
+
+if(galleryNext){
+
+    galleryNext.addEventListener("click", ()=>{
+
+        document.querySelector(".gallery-container")
+        .scrollBy({
+            left: window.innerWidth,
+            behavior:"smooth"
+        });
+
+    });
+
+}
+
 }
