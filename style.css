@@ -246,10 +246,10 @@ button:hover {
     /* Header */
 
     header {
-        height: auto;
-        flex-direction: column;
-        padding: 20px;
-        gap: 20px;
+        height: 70px;
+        flex-direction: row;
+        padding: 0 20px;
+        gap: 0;
     }
 
 
@@ -265,29 +265,10 @@ button:hover {
 
     nav {
     display: none;
-}
-
-    .menu-toggle {
-        display: block;
-        position: absolute;
-        right: 20px;
-        top: 50%;
-        transform: translateY(-50%);
-
-        background: transparent;
-        border: none;
-        padding: 5px;
-
-        color: #123447;
-        font-size: 30px;
-        line-height: 1;
-
-        cursor: pointer;
-        z-index: 1000;
-
-        -webkit-tap-highlight-color: transparent;
     }
 
+
+    
     nav.active {
         display: flex;
 
@@ -588,7 +569,7 @@ footer {
 
 /* Navbar όταν κάνεις scroll */
 
-header.scrolled{
+header.scrolled {
     background: var(--yellow-color);
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     transition: all 0.3s ease;
@@ -1158,15 +1139,6 @@ img {
 }   
 
 
-.menu-toggle {
-    display: none;
-}
-
-
-
-
-
-
 .gallery-prev,
 .gallery-next,
 .testimonial-prev,
@@ -1179,41 +1151,6 @@ img {
 }
 
 @media (max-width: 768px) {
-
-    header {
-        position: relative;
-        z-index: 1000;
-    }
-
-    .menu-toggle {
-        display: block !important;
-        position: absolute;
-        right: 20px;
-        top: 50%;
-        transform: translateY(-50%);
-
-        width: 45px;
-        height: 45px;
-
-        padding: 0;
-        margin: 0;
-
-        background: #123447 !important;
-        border: none !important;
-        border-radius: 8px;
-
-        color: white !important;
-        font-size: 30px;
-        line-height: 45px;
-        text-align: center;
-
-        z-index: 9999;
-        cursor: pointer;
-    }
-
-    nav {
-        display: none !important;
-    }
 
     nav.active {
         display: flex !important;
@@ -1242,23 +1179,35 @@ img {
 ========================== */
 
 @media (max-width: 768px) {
+
     .menu-toggle {
         display: block !important;
-        position: fixed !important;
-        top: 20px !important;
+        position: absolute !important; /* ΕΔΩ */
+        
+        top: 16px !important;
         right: 20px !important;
-        width: 50px !important;
-        height: 50px !important;
+
+        width: 45px !important;
+        height: 45px !important;
+
+        padding: 0 !important;
+        margin: 0 !important;
+
         background: #123447 !important;
         color: white !important;
-        border: 2px solid white !important;
+
+        border: none !important;
         border-radius: 8px !important;
-        font-size: 30px !important;
+
+        font-size: 27px !important;
         line-height: 45px !important;
+        text-align: center !important;
+
         z-index: 99999 !important;
     }
 
-    nav {
-        display: none !important;
+    header.scrolled {
+        transform: translateY(-100%);
     }
+
 }
