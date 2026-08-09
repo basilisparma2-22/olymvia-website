@@ -256,7 +256,7 @@ button:hover {
     .logo {
     width: 100%;
     text-align: center;
-}
+    }
 
     .logo img {
         width: 170px;
@@ -267,6 +267,46 @@ button:hover {
     display: none;
 }
 
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+
+        background: transparent;
+        border: none;
+        padding: 5px;
+
+        color: #123447;
+        font-size: 30px;
+        line-height: 1;
+
+        cursor: pointer;
+        z-index: 1000;
+
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    nav.active {
+        display: flex;
+
+        position: absolute;
+        top: 100%;
+        left: 0;
+
+        width: 100%;
+
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+
+        padding: 25px 0;
+
+        background: #123447;
+
+        z-index: 999;
+    }
 
 
 
@@ -763,10 +803,10 @@ img {
 }
 
 #map {
-    height: 500px;
-    width: 100%;
+    height: 300px;
+    width: 92%;
+    margin: 40px auto 0;
     border-radius: 20px;
-    margin-top: 40px;
 }
 
 .map-popup {
@@ -989,28 +1029,32 @@ img {
     .gallery-next,
     .testimonial-prev,
     .testimonial-next {
+        display: flex !important;
 
-        display:flex !important;
-        position:absolute;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
 
-        top:50%;
-        transform:translateY(-50%);
+        width: 40px;
+        height: 60px;
 
-        width:40px;
-        height:60px;
+        padding: 0;
+        margin: 0;
 
-        border:none;
-        background:transparent;
+        border: none;
+        outline: none;
+        background: transparent;
 
-        color:white;
+        color: rgba(255,255,255,0.55);
 
-        align-items:center;
-        justify-content:center;
+        align-items: center;
+        justify-content: center;
 
-        z-index:20;
+        z-index: 20;
 
-        cursor:pointer;
+        cursor: pointer;
 
+        -webkit-tap-highlight-color: transparent;
     }
 
     .slider-btn:hover,
@@ -1027,13 +1071,13 @@ img {
     .team-prev,
     .gallery-prev,
     .testimonial-prev{
-        left:10px;
+        left:5px;
     }
 
     .team-next,
     .gallery-next,
     .testimonial-next{
-        right:10px;
+        right:5px;
     }
 
     .slider-btn svg,
@@ -1062,15 +1106,63 @@ img {
         fill:none;
         }
 
+    .slider-btn:focus,
+    .slider-btn:active,
+    .gallery-prev:focus,
+    .gallery-prev:active,
+    .gallery-next:focus,
+    .gallery-next:active,
+    .testimonial-prev:focus,
+    .testimonial-prev:active,
+    .testimonial-next:focus,
+    .testimonial-next:active {
+        outline: none;
+        border: none;
+        background: transparent;
+        box-shadow: none;
+    }
 
+    .slider-btn::-moz-focus-inner,
+    .gallery-prev::-moz-focus-inner,
+    .gallery-next::-moz-focus-inner,
+    .testimonial-prev::-moz-focus-inner,
+    .testimonial-next::-moz-focus-inner {
+        border: 0;
+    }
+
+    .slider-btn:hover,
+    .gallery-prev:hover,
+    .gallery-next:hover,
+    .testimonial-prev:hover,
+    .testimonial-next:hover {
+        color: white;
+    }
+    
 
     }
 
+    #map {
+        height: 300px;
+    }
+
+    .contact-info a {
+        display: block;
+        max-width: 100%;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+}   
+
+
+.menu-toggle {
+    display: none;
 }
 
 
 
-}
+
+
 
 .gallery-prev,
 .gallery-next,
@@ -1079,7 +1171,68 @@ img {
     display: none;
 }
 
+.menu-toggle {
+    display: none;
+}
 
+@media (max-width: 768px) {
+
+    header {
+        position: relative;
+        z-index: 1000;
+    }
+
+    .menu-toggle {
+        display: block !important;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+
+        width: 45px;
+        height: 45px;
+
+        padding: 0;
+        margin: 0;
+
+        background: #123447 !important;
+        border: none !important;
+        border-radius: 8px;
+
+        color: white !important;
+        font-size: 30px;
+        line-height: 45px;
+        text-align: center;
+
+        z-index: 9999;
+        cursor: pointer;
+    }
+
+    nav {
+        display: none !important;
+    }
+
+    nav.active {
+        display: flex !important;
+
+        position: absolute;
+        top: 100%;
+        left: 0;
+
+        width: 100%;
+
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+
+        padding: 25px 0;
+
+        background: #123447;
+
+        z-index: 1000;
+    }
+
+}
 
 /* ==========================
    END OF MOBILE

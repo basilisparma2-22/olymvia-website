@@ -133,85 +133,95 @@ const teamContainer = document.querySelector(".team-container");
 const teamNext = document.querySelector(".team-next");
 const teamPrev = document.querySelector(".team-prev");
 
-if(teamContainer && teamNext && teamPrev){
+teamNext.addEventListener("click", () => {
 
-    teamNext.addEventListener("click", ()=>{
+    const card = teamContainer.querySelector(".team-card");
+    const gap = 20;
+    const slideWidth = card.offsetWidth + gap;
 
-        teamContainer.scrollBy({
-            left: teamContainer.clientWidth,
-            behavior:"smooth"
-        });
-
+    teamContainer.scrollBy({
+        left: slideWidth,
+        behavior: "smooth"
     });
 
+});
 
-    teamPrev.addEventListener("click", ()=>{
+teamPrev.addEventListener("click", () => {
 
-        teamContainer.scrollBy({
-            left: -teamContainer.clientWidth,
-            behavior:"smooth"
-        });
+    const card = teamContainer.querySelector(".team-card");
+    const gap = 20;
+    const slideWidth = card.offsetWidth + gap;
 
+    teamContainer.scrollBy({
+        left: -slideWidth,
+        behavior: "smooth"
     });
 
-}
+});
 
+const galleryContainer = document.querySelector(".gallery-container");
 const galleryNext = document.querySelector(".gallery-next");
 const galleryPrev = document.querySelector(".gallery-prev");
 
-const gallery = document.querySelector(".gallery-container");
+galleryNext.addEventListener("click", () => {
 
+    const slideWidth = galleryContainer.clientWidth;
 
-if(galleryNext){
-
-galleryNext.addEventListener("click", ()=>{
-
-    gallery.scrollBy({
-        left: gallery.clientWidth,
-        behavior:"smooth"
+    galleryContainer.scrollBy({
+        left: slideWidth + 20,
+        behavior: "smooth"
     });
 
 });
 
-}
+galleryPrev.addEventListener("click", () => {
 
+    const slideWidth = galleryContainer.clientWidth;
 
-if(galleryPrev){
-
-galleryPrev.addEventListener("click", ()=>{
-
-    gallery.scrollBy({
-        left: -window.innerWidth,
-        behavior:"smooth"
+    galleryContainer.scrollBy({
+        left: -(slideWidth + 20),
+        behavior: "smooth"
     });
 
 });
-
-}
 
 const testimonialContainer = document.querySelector(".testimonial-container");
 const testimonialNext = document.querySelector(".testimonial-next");
 const testimonialPrev = document.querySelector(".testimonial-prev");
 
-if(testimonialContainer && testimonialNext && testimonialPrev){
+testimonialNext.addEventListener("click", () => {
 
-    testimonialNext.addEventListener("click", ()=>{
+    const card = testimonialContainer.querySelector(".testimonial-card");
+    const gap = 20;
+    const slideWidth = card.offsetWidth + gap;
 
-        testimonialContainer.scrollBy({
-            left: testimonialContainer.clientWidth,
-            behavior:"smooth"
-        });
-
+    testimonialContainer.scrollBy({
+        left: slideWidth,
+        behavior: "smooth"
     });
 
+});
 
-    testimonialPrev.addEventListener("click", ()=>{
+testimonialPrev.addEventListener("click", () => {
 
-        testimonialContainer.scrollBy({
-            left: -testimonialContainer.clientWidth,
-            behavior:"smooth"
-        });
+    const card = testimonialContainer.querySelector(".testimonial-card");
+    const gap = 20;
+    const slideWidth = card.offsetWidth + gap;
 
+    testimonialContainer.scrollBy({
+        left: -slideWidth,
+        behavior: "smooth"
+    });
+
+});
+
+const menuToggle = document.querySelector(".menu-toggle");
+const nav = document.querySelector("nav");
+
+if (menuToggle && nav) {
+
+    menuToggle.addEventListener("click", () => {
+        nav.classList.toggle("active");
     });
 
 }
