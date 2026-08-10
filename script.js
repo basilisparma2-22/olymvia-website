@@ -586,3 +586,5 @@ document.getElementById("gr-btn").addEventListener("click", () => {
 document.getElementById("en-btn").addEventListener("click", () => {
     changeLanguage("en");
 });
+
+changeLanguage("gr");
