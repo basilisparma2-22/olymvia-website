@@ -224,6 +224,12 @@ if (menuToggle && nav) {
         nav.classList.toggle("active");
     });
 
+    nav.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
+            nav.classList.remove("active");
+        });
+    });
+
 }
 
 // ==========================
@@ -588,3 +594,106 @@ document.getElementById("en-btn").addEventListener("click", () => {
 });
 
 changeLanguage("gr");
+
+const customScrollbar = document.getElementById("custom-scrollbar");
+const scrollThumb = document.getElementById("scroll-thumb");
+
+function updateCustomScrollbar() {
+
+    const scrollTop = window.scrollY;
+    const documentHeight = document.documentElement.scrollHeight;
+    const windowHeight = window.innerHeight;
+
+    const maxScroll = documentHeight - windowHeight;
+    const trackHeight = windowHeight;
+    const thumbHeight = scrollThumb.offsetHeight;
+
+    const maxThumbPosition = trackHeight - thumbHeight;
+
+    const thumbPosition =
+        (scrollTop / maxScroll) * maxThumbPosition;
+
+    scrollThumb.style.top = `${thumbPosition}px`;
+}
+
+window.addEventListener("scroll", updateCustomScrollbar);
+window.addEventListener("resize", updateCustomScrollbar);
+
+updateCustomScrollbar();
+
+let isDraggingScrollbar = false;
+
+scrollThumb.addEventListener("mousedown", (e) => {
+
+    isDraggingScrollbar = true;
+
+    e.preventDefault();
+
+});
+
+document.addEventListener("mousemove", (e) => {
+
+    if (!isDraggingScrollbar) return;
+
+    const trackHeight = window.innerHeight;
+    const thumbHeight = scrollThumb.offsetHeight;
+
+    const maxThumbPosition = trackHeight - thumbHeight;
+
+    let newPosition = e.clientY - (thumbHeight / 2);
+
+    newPosition = Math.max(0, newPosition);
+    newPosition = Math.min(maxThumbPosition, newPosition);
+
+    const documentHeight = document.documentElement.scrollHeight;
+    const windowHeight = window.innerHeight;
+
+    const maxScroll = documentHeight - windowHeight;
+
+    const scrollPosition =
+        (newPosition / maxThumbPosition) * maxScroll;
+
+    window.scrollTo({
+        top: scrollPosition,
+        behavior: "instant"
+    });
+
+});
+
+document.addEventListener("mouseup", () => {
+
+    isDraggingScrollbar = false;
+
+});
+
+document.addEventListener("mousemove", (e) => {
+
+    if (!isDraggingScrollbar) return;
+
+    const deltaY = e.clientY - dragStartY;
+
+    const documentHeight = document.documentElement.scrollHeight;
+    const windowHeight = window.innerHeight;
+
+    const maxScroll = documentHeight - windowHeight;
+
+    const trackHeight = windowHeight;
+    const thumbHeight = scrollThumb.offsetHeight;
+
+    const maxThumbPosition = trackHeight - thumbHeight;
+
+    const scrollAmount =
+        (deltaY / maxThumbPosition) * maxScroll;
+
+    window.scrollTo(
+        0,
+        dragStartScroll + scrollAmount
+    );
+
+});
+
+document.addEventListener("mouseup", () => {
+
+    isDraggingScrollbar = false;
+
+});
