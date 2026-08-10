@@ -335,45 +335,59 @@
 
     <h2 data-translate="projectsTitle">Οι Ευκαιρίες μας</h2>
 
-    <div class="project-container">
+        <div class="project-container">
 
-        <div class="project-card">
+            <div class="project-card">
 
-            <h3>🌍 Youth Exchanges</h3>
+                <h3>🌍 Youth Exchanges</h3>
 
-            <p data-translate="projectYouthText">
-                Διεθνείς ανταλλαγές νέων μέσω Erasmus+
-                με στόχο τη γνωριμία πολιτισμών,
-                τη συνεργασία και την ανάπτυξη νέων δεξιοτήτων.
-            </p>
+                <p data-translate="projectYouthText">
+                    Διεθνείς ανταλλαγές νέων μέσω Erasmus+ με στόχο
+                    τη γνωριμία πολιτισμών, τη συνεργασία και
+                    την ανάπτυξη νέων δεξιοτήτων.
+                </p>
+
+                <a href="#contact" class="project-button" data-translate="projectButton">
+                    Μάθε περισσότερα
+                </a>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <h3>🎓 Training Courses</h3>
+
+                <p data-translate="projectTrainingText">
+                    Εκπαιδευτικά σεμινάρια για νέους και youth workers
+                    που θέλουν να αναπτύξουν νέες δεξιότητες και
+                    να εξελιχθούν προσωπικά και επαγγελματικά.
+                </p>
+
+                <a href="#contact" class="project-button" data-translate="projectButton">
+                    Μάθε περισσότερα
+                </a>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <h3>🤝 Volunteer Opportunities</h3>
+
+                <p data-translate="projectVolunteerText">
+                    Ευκαιρίες εθελοντισμού που ενισχύουν την ενεργή
+                    συμμετοχή, την κοινωνική προσφορά και την
+                    απόκτηση διεθνούς εμπειρίας.
+                </p>
+
+                <a href="#contact" class="project-button" data-translate="projectButton">
+                    Μάθε περισσότερα
+                </a>
+
+            </div>
 
         </div>
-
-
-        <div class="project-card">
-
-            <h3>🎓 Training Courses</h3>
-
-            <p data-translate="projectTrainingText">
-                Εκπαιδευτικά σεμινάρια για νέους που θέλουν
-                να εξελιχθούν προσωπικά και επαγγελματικά.
-            </p>
-
-        </div>
-
-
-        <div class="project-card">
-
-            <h3>🤝 Volunteer Opportunities</h3>
-
-            <p data-translate="projectVolunteerText">
-                Εθελοντικές δράσεις που ενισχύουν
-                την ενεργή συμμετοχή και την κοινωνική προσφορά.
-            </p>
-
-        </div>
-
-    </div>
 
 </section>
 
@@ -482,8 +496,9 @@
     </div>
 
     <form class="contact-form"
-          action="https://formspree.io/f/xwlekzgg"
-          method="POST">
+        id="contact-form"
+        action="https://formspree.io/f/xwlekzgg"
+        method="POST">
 
         <input
             type="text"
@@ -522,7 +537,7 @@
 
         </select>
 
-        <textarea 
+        <textarea
             name="message"
             placeholder="Το μήνυμά σας"
             data-translate-placeholder="messagePlaceholder"
@@ -531,6 +546,8 @@
         <button type="submit" data-translate="submitButton">
             Αποστολή
         </button>
+
+        <p id="form-status" class="form-status"></p>
 
     </form>
 

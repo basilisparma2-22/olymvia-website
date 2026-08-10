@@ -250,7 +250,7 @@ const translations = {
         
         aboutTitle: "Σχετικά με την OLYMVIA",
 
-        aboutText1: "Η OLYMVIA γεννήθηκε στην Πιερία, έναν τόπο όπου η ιστορία, η φύση και ο πολιτισμός συναντιούνται. Στη σκιά του μυθικού Ολύμπου, δημιουργούμε γέφυρες επικοινωνίας ανάμεσα στους νέους της Ελλάδας και της Ευρώπης.",
+        aboutText1: 'Η OLYMVIA γεννήθηκε στην <a href="https://el.wikipedia.org/wiki/Πιερία" target="_blank" rel="noopener">Πιερία</a>, έναν τόπο όπου η ιστορία, η φύση και ο πολιτισμός συναντιούνται. Στη σκιά του μυθικού Ολύμπου, δημιουργούμε γέφυρες επικοινωνίας ανάμεσα στους νέους της Ελλάδας και της Ευρώπης.',
 
         aboutText2: "Μέσα από προγράμματα Erasmus+, ανταλλαγές νέων, εκπαιδευτικά σεμινάρια και εθελοντικές δράσεις, προσφέρουμε ευκαιρίες για μάθηση, προσωπική ανάπτυξη και ενεργή συμμετοχή.",
 
@@ -347,6 +347,14 @@ const translations = {
 
         namePlaceholder: "Όνομα",
         messagePlaceholder: "Το μήνυμά σας",
+
+        formSending: "Αποστολή...",
+        formSuccess: "Το μήνυμά σας στάλθηκε με επιτυχία! Θα επικοινωνήσουμε μαζί σας σύντομα.",
+        formError: "Κάτι πήγε στραβά. Παρακαλώ δοκιμάστε ξανά.",
+        formConnectionError: "Δεν ήταν δυνατή η αποστολή. Ελέγξτε τη σύνδεσή σας και δοκιμάστε ξανά.",
+
+        projectButton: "Μάθε περισσότερα",
+
     },
 
     en: {
@@ -367,7 +375,7 @@ const translations = {
 
         aboutTitle: "About OLYMVIA",
 
-        aboutText1: "OLYMVIA was born in Pieria, a place where history, nature and culture meet. In the shadow of mythical Mount Olympus, we create bridges of communication between young people from Greece and Europe.",
+        aboutText1: 'OLYMVIA was born in <a href="https://en.wikipedia.org/wiki/Pieria_(regional_unit)" target="_blank" rel="noopener">Pieria</a>, a place where history, nature and culture meet. In the shadow of mythical Mount Olympus, we create bridges of communication between young people from Greece and Europe.',
 
         aboutText2: "Through Erasmus+ programs, youth exchanges, training courses and volunteering activities, we offer opportunities for learning, personal development and active participation.",
 
@@ -450,6 +458,14 @@ const translations = {
 
         namePlaceholder: "Name",
         messagePlaceholder: "Your message",
+
+        formSending: "Sending...",
+        formSuccess: "Your message has been sent successfully! We will get back to you soon.",
+        formError: "Something went wrong. Please try again.",
+        formConnectionError: "Unable to send your message. Please check your connection and try again.",
+
+        projectButton: "Learn more",
+
     }
 
 };
@@ -466,7 +482,7 @@ function changeLanguage(language) {
         const key = element.getAttribute("data-translate");
 
         if (translations[language][key]) {
-            element.textContent = translations[language][key];
+            element.innerHTML = translations[language][key];
         }
 
     });
@@ -494,8 +510,72 @@ function changeLanguage(language) {
         document.getElementById("en-btn").classList.add("active");
     }
 
+    document.documentElement.lang = language === "gr" ? "el" : "en";
+
 }
 
+const contactForm = document.getElementById("contact-form");
+const formStatus = document.getElementById("form-status");
+
+contactForm.addEventListener("submit", async function (event) {
+
+    event.preventDefault();
+
+    const submitButton = contactForm.querySelector("button[type='submit']");
+    const currentLanguage =
+        document.documentElement.lang === "en" ? "en" : "gr";
+
+    submitButton.disabled = true;
+    submitButton.textContent = translations[currentLanguage].formSending;
+
+    formStatus.textContent = "";
+    formStatus.className = "form-status";
+
+    try {
+
+        const response = await fetch(contactForm.action, {
+            method: "POST",
+            body: new FormData(contactForm),
+            headers: {
+                "Accept": "application/json"
+            }
+        });
+
+        if (response.ok) {
+
+            contactForm.reset();
+
+            formStatus.textContent =
+                translations[currentLanguage].formSuccess;
+
+            formStatus.classList.add("success");
+
+        } else {
+
+            formStatus.textContent =
+                translations[currentLanguage].formError;
+
+            formStatus.classList.add("error");
+        }
+
+    } catch (error) {
+
+        formStatus.textContent =
+            translations[currentLanguage].formConnectionError;
+
+        formStatus.classList.add("error");
+
+    } finally {
+
+        submitButton.disabled = false;
+
+        const submitKey = "submitButton";
+
+        submitButton.textContent =
+            translations[currentLanguage][submitKey];
+    }
+
+});
 
 // Language buttons
 

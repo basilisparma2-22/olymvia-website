@@ -1267,3 +1267,24 @@ img {
     border-radius: 3px;
     display: block;
 }
+
+.form-status {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    min-height: 20px;
+}
+
+.form-status.success {
+    color: #00B86B;
+}
+
+.form-status.error {
+    color: #d9534f;
+}
+
+.contact-form button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
