@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="el">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +7,13 @@
     <meta name="description" content="OLYMVIA - Erasmus+ youth exchanges, training courses και εθελοντικές δράσεις στην Πιερία, στους πρόποδες του Ολύμπου. Δημιουργούμε ευκαιρίες για νέους στην Ελλάδα και την Ευρώπη.">
 
     <meta name="keywords" content="OLYMVIA, Erasmus+, youth exchanges, training courses, volunteering, Pieria, Olympus, Greece">
+
+    <title>OLYMVIA | Erasmus+ Youth Exchanges, Training & Volunteering</title>
+
+    <meta name="description"
+        content="OLYMVIA creates opportunities for young people through Erasmus+ youth exchanges, training courses and volunteering activities in Greece and across Europe.">
+
+    <meta name="robots" content="index, follow">
 
     <meta property="og:title" content="OLYMVIA | Ancient Roots - New Horizons">
 
@@ -31,18 +38,29 @@
 
 <body>
 
+    <div class="language-switcher">
+        <button id="gr-btn" class="active">
+            <img src="images/flag-gr.svg" alt="Ελληνικά">
+        </button>
+
+        <button id="en-btn">
+            <img src="images/flag-gb.svg" alt="English">
+        </button>
+    </div>
+
 <header>
     <div class="logo">
     <img src="images/logo.png" alt="OLYMVIA Erasmus+ logo" loading="eager">
     </div>
 
     <nav>
-        <a href="#home">Αρχική</a>
-        <a href="#services">Δράσεις</a>
-        <a href="#about">Σχετικά</a>
-        <a href="#projects">Προγράμματα</a>
-        <a href="#contact">Επικοινωνία</a>
+        <a href="#home" data-translate="navHome">Αρχική</a>
+        <a href="#services" data-translate="navServices">Δράσεις</a>
+        <a href="#about" data-translate="navAbout">Σχετικά</a>
+        <a href="#projects" data-translate="navProjects">Προγράμματα</a>
+        <a href="#contact" data-translate="navContact">Επικοινωνία</a>
     </nav>
+
 </header>
 
 <button class="menu-toggle" aria-label="Open menu">
@@ -54,13 +72,13 @@
 
     <h1>Ancient Roots, New Horizons</h1>
 
-    <p>
+    <p data-translate="heroText">
         Δημιουργούμε ευκαιρίες για νέους μέσα από Erasmus+ 
-    ανταλλαγές, εκπαιδευτικά προγράμματα και εθελοντικές δράσεις.
+        ανταλλαγές, εκπαιδευτικά προγράμματα και εθελοντικές δράσεις.
     </p>
 
-    <a href="#contact" class="hero-button">
-    Γίνε μέρος της εμπειρίας
+    <a href="#contact" class="hero-button" data-translate="heroButton">
+        Γίνε μέρος της εμπειρίας
     </a>
 
     
@@ -68,7 +86,7 @@
 
 <section class="services hidden" id="services">
 
-    <h2>Οι Δράσεις μας</h2>
+    <h2 data-translate="servicesTitle">Οι Δράσεις μας</h2>
 
     <div class="service-container">
 
@@ -80,7 +98,7 @@
 
         <h3>Erasmus+ Youth Exchange</h3>
 
-        <p>
+        <p data-translate="youthExchangeText">
             Συμμετοχή σε διεθνείς ανταλλαγές νέων,
             γνωριμία με διαφορετικούς πολιτισμούς και ανάπτυξη νέων δεξιοτήτων.
         </p>
@@ -96,7 +114,7 @@
 
         <h3>Training Courses</h3>
 
-        <p>
+        <p data-translate="trainingText">
             Εκπαιδευτικά προγράμματα που ενισχύουν
             την προσωπική ανάπτυξη, τη συνεργασία και τη δημιουργικότητα.
         </p>
@@ -110,9 +128,9 @@
             🌱
         </div>
 
-        <h3>Εθελοντικές Δράσεις</h3>
+        <h3 data-translate="volunteeringTitle">Εθελοντικές Δράσεις</h3>
 
-        <p>
+        <p data-translate="volunteeringText">
             Ευκαιρίες ενεργού συμμετοχής στην κοινωνία
             μέσα από τοπικές και ευρωπαϊκές πρωτοβουλίες.
         </p>
@@ -132,75 +150,80 @@
 
     <div class="about-text">
 
-        <h2>Σχετικά με την OLYMVIA</h2>
+        <h2 data-translate="aboutTitle">Σχετικά με την OLYMVIA</h2>
 
-        <p>
+        <p data-translate="aboutText1">
             Η OLYMVIA γεννήθηκε στην Πιερία, έναν τόπο όπου η ιστορία,
             η φύση και ο πολιτισμός συναντιούνται. Στη σκιά του μυθικού
             Ολύμπου, δημιουργούμε γέφυρες επικοινωνίας ανάμεσα στους νέους
             της Ελλάδας και της Ευρώπης.
         </p>
 
-        <p>
+        <p data-translate="aboutText2">
             Μέσα από προγράμματα Erasmus+, ανταλλαγές νέων, εκπαιδευτικά
             σεμινάρια και εθελοντικές δράσεις, προσφέρουμε ευκαιρίες για
             μάθηση, προσωπική ανάπτυξη και ενεργή συμμετοχή.
         </p>
 
-        <p>
+        <p data-translate="aboutText3">
             Ο Όλυμπος, το βουνό των Θεών, αποτελεί για εμάς σύμβολο
             έμπνευσης, εξέλιξης και νέων οριζόντων — αξίες που θέλουμε
             να μεταφέρουμε σε κάθε μας δράση.
         </p>
 
-        <a href="#projects" class="hero-button">
+        <a href="#projects" class="hero-button" data-translate="aboutButton">
             Ανακάλυψε τις δράσεις μας
         </a>
+
     </div>
 
 </section>
 
 <section class="team hidden" id="team">
 
-    <h2>Meet Our Team</h2>
+    <h2 data-translate="teamTitle">Η Ομάδα μας</h2>
 
-    <div class="team-slider-wrapper">
+<div class="team-slider-wrapper">
 
     <div class="team-container">
 
         <div class="team-card">
             <img src="images/troll5.jpg" alt="Team member">
             <h3>Lana</h3>
-            <span>President</span>
-            <p>queeeeen slay</p>
+            <span data-translate="teamPresident">Πρόεδρος</span>
+            <p data-translate="teamPresidentText">queeeeen slay</p>
         </div>
 
         <div class="team-card">
             <img src="images/troll4.jpg" alt="Team member">
             <h3>Ακης Πετρετζικης</h3>
-            <span>Project Manager</span>
-            <p>μαγειρεύει γενικά και έτσι</p>
+            <span data-translate="teamProjectManager">Υπεύθυνος Έργων</span>
+            <p data-translate="teamProjectManagerText">μαγειρεύει γενικά και έτσι</p>
         </div>
 
         <div class="team-card">
             <img src="/images/troll3.jpg" alt="Team member">
             <h3>Σακης Αρναουτογλου</h3>
-            <span>Youth Worker</span>
-            <p>Βλέπει τον καιρό</p>
+            <span data-translate="teamYouthWorker">Youth Worker</span>
+            <p data-translate="teamYouthWorkerText">Βλέπει τον καιρό</p>
         </div>
 
         <div class="team-card">
             <img src="images/troll2.jpg" alt="Team member">
             <h3>Αλεξης Τσιπρας</h3>
-            <span>Coordinator</span>
-            <p>Βλέπει το μέλλον</p>
+            <span data-translate="teamCoordinator">Συντονιστής</span>
+            <p data-translate="teamCoordinatorText">Βλέπει το μέλλον</p>
         </div>
 
         <div class="team-card">
             <img src="images/troll1.jpg" alt="Team member">
             <h3>Γιωργος Σαμαρας</h3>
-            <span>Volunteer Coordinator</span>
-            <p>Δεν βλέπει (έχει μυωπία)</p>
+            <span data-translate="teamVolunteerCoordinator">
+                Συντονιστής Εθελοντών
+            </span>
+            <p data-translate="teamVolunteerCoordinatorText">
+                Δεν βλέπει (έχει μυωπία)
+            </p>
         </div>
 
     </div>
@@ -266,10 +289,12 @@
 
 <section class="gallery hidden" id="gallery">
 
-    <h2 class="hidden">Moments From Our Projects</h2>
+    <h2 class="hidden" data-translate="galleryTitle">
+        Στιγμές από τα Προγράμματά μας
+    </h2>
 
-    <p class="hidden">
-        Discover highlights from our activities, exchanges and international experiences.
+    <p class="hidden" data-translate="galleryText">
+        Ανακάλυψε στιγμές από τις δράσεις μας, τις ανταλλαγές και τις διεθνείς εμπειρίες.
     </p>
 
     <div class="gallery-slider-wrapper">
@@ -306,7 +331,7 @@
 
 <section class="projects" id="projects">
 
-    <h2>Οι Ευκαιρίες μας</h2>
+    <h2 data-translate="projectsTitle">Οι Ευκαιρίες μας</h2>
 
     <div class="project-container">
 
@@ -314,7 +339,7 @@
 
             <h3>🌍 Youth Exchanges</h3>
 
-            <p>
+            <p data-translate="projectYouthText">
                 Διεθνείς ανταλλαγές νέων μέσω Erasmus+
                 με στόχο τη γνωριμία πολιτισμών,
                 τη συνεργασία και την ανάπτυξη νέων δεξιοτήτων.
@@ -327,7 +352,7 @@
 
             <h3>🎓 Training Courses</h3>
 
-            <p>
+            <p data-translate="projectTrainingText">
                 Εκπαιδευτικά σεμινάρια για νέους που θέλουν
                 να εξελιχθούν προσωπικά και επαγγελματικά.
             </p>
@@ -339,7 +364,7 @@
 
             <h3>🤝 Volunteer Opportunities</h3>
 
-            <p>
+            <p data-translate="projectVolunteerText">
                 Εθελοντικές δράσεις που ενισχύουν
                 την ενεργή συμμετοχή και την κοινωνική προσφορά.
             </p>
@@ -352,10 +377,12 @@
 
 <section class="testimonials hidden" id="testimonials">
 
-    <h2 class="hidden">What Participants Say</h2>
+    <h2 class="hidden" data-translate="testimonialsTitle">
+        Τι λένε οι Συμμετέχοντες
+    </h2>
 
-    <p class="hidden">
-        Experiences and stories from young people who joined our projects.
+    <p class="hidden" data-translate="testimonialsText">
+        Εμπειρίες και ιστορίες νέων που συμμετείχαν στα προγράμματά μας.
     </p>
 
 
@@ -426,75 +453,86 @@
 
 <section class="contact hidden" id="contact">
 
-    <h2>Επικοινωνία</h2>
+    <h2 data-translate="contactTitle">Επικοινωνία</h2>
 
-    <div class="contact-container">
+<div class="contact-container">
 
-        <div class="contact-info">
+    <div class="contact-info">
 
-            <h3>Στοιχεία</h3>
+        <h3 data-translate="contactInfo">Στοιχεία</h3>
 
-            <p>📞 Τηλέφωνο: 6970403206</p>
-            <p>
-                ✉️ Email:
-                <a href="mailto:olymviaerasmus@outlook.com">
-                    olymviaerasmus@outlook.com
-                </a>
-            </p>
+        <p>
+            📞 <span data-translate="phoneLabel">Τηλέφωνο</span>:
+            6970403206
+        </p>
 
-            <p>📍 Πιερία, Ελλάδα</p>
+        <p>
+            ✉️ <span data-translate="emailLabel">Email</span>:
+            <a href="mailto:olymviaerasmus@outlook.com">
+                olymviaerasmus@outlook.com
+            </a>
+        </p>
 
-        </div>
-
-
-        <form class="contact-form" action="https://formspree.io/f/xwlekzgg" method="POST">
-
-            <input type="text" 
-                    name="name"
-                    placeholder="Όνομα"
-                    required>
-
-            <input type="email" 
-                    name="email"
-                    placeholder="Email"
-                    required>
-
-            <select name="interest" required>
-
-                <option value="" disabled selected>
-                    Επιλέξτε ενδιαφέρον
-                </option>
-
-                <option value="Youth Exchange">
-                    Erasmus+ Youth Exchange
-                </option>
-
-                <option value="Training Course">
-                    Training Course
-                </option>
-
-                <option value="Volunteering">
-                    Εθελοντική Δράση
-                </option>
-
-                <option value="Partnership">
-                    Συνεργασία οργανισμών
-                </option>
-
-            </select>
-
-            <textarea 
-                    name="message"
-                    placeholder="Το μήνυμά σας"
-                    required></textarea>
-
-            <button type="submit">
-                Αποστολή
-            </button>
-
-        </form>
+        <p>
+            📍 <span data-translate="locationLabel">Πιερία, Ελλάδα</span>
+        </p>
 
     </div>
+
+    <form class="contact-form"
+          action="https://formspree.io/f/xwlekzgg"
+          method="POST">
+
+        <input
+            type="text"
+            name="name"
+            placeholder="Όνομα"
+            data-translate-placeholder="namePlaceholder"
+            required>
+
+        <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            required>
+
+        <select name="interest" required>
+
+            <option value="" disabled selected data-translate="interestPlaceholder">
+                Επιλέξτε ενδιαφέρον
+            </option>
+
+            <option value="Youth Exchange" data-translate="interestYouthExchange">
+                Erasmus+ Youth Exchange
+            </option>
+
+            <option value="Training Course" data-translate="interestTrainingCourse">
+                Training Course
+            </option>
+
+            <option value="Volunteering" data-translate="interestVolunteering">
+                Εθελοντική Δράση
+            </option>
+
+            <option value="Partnership" data-translate="interestPartnership">
+                Συνεργασία οργανισμών
+            </option>
+
+        </select>
+
+        <textarea 
+            name="message"
+            placeholder="Το μήνυμά σας"
+            data-translate-placeholder="messagePlaceholder"
+            required></textarea>
+
+        <button type="submit" data-translate="submitButton">
+            Αποστολή
+        </button>
+
+    </form>
+
+</div>
 
 </section>
 
@@ -508,7 +546,7 @@
             Ancient Roots - New Horizons
         </p>
 
-        <p>
+        <p data-translate="footerText">
             Δημιουργούμε ευκαιρίες για νέους μέσα από
             Erasmus+ προγράμματα, εκπαιδευτικές δράσεις
             και εθελοντισμό στην Ελλάδα και την Ευρώπη.
