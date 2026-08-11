@@ -623,15 +623,17 @@ updateCustomScrollbar();
 
 let isDraggingScrollbar = false;
 
-scrollThumb.addEventListener("mousedown", (e) => {
+scrollThumb.addEventListener("pointerdown", (e) => {
 
     isDraggingScrollbar = true;
+
+    scrollThumb.setPointerCapture(e.pointerId);
 
     e.preventDefault();
 
 });
 
-document.addEventListener("mousemove", (e) => {
+scrollThumb.addEventListener("pointermove", (e) => {
 
     if (!isDraggingScrollbar) return;
 
@@ -660,40 +662,31 @@ document.addEventListener("mousemove", (e) => {
 
 });
 
-document.addEventListener("mouseup", () => {
+scrollThumb.addEventListener("pointerup", (e) => {
+
+    isDraggingScrollbar = false;
+
+    scrollThumb.releasePointerCapture(e.pointerId);
+
+});
+
+scrollThumb.addEventListener("pointercancel", () => {
 
     isDraggingScrollbar = false;
 
 });
 
-document.addEventListener("mousemove", (e) => {
 
-    if (!isDraggingScrollbar) return;
+window.addEventListener("scroll", () => {
 
-    const deltaY = e.clientY - dragStartY;
+    if (window.scrollY <= 5) {
 
-    const documentHeight = document.documentElement.scrollHeight;
-    const windowHeight = window.innerHeight;
+        customScrollbar.classList.remove("visible");
 
-    const maxScroll = documentHeight - windowHeight;
+    } else {
 
-    const trackHeight = windowHeight;
-    const thumbHeight = scrollThumb.offsetHeight;
+        customScrollbar.classList.add("visible");
 
-    const maxThumbPosition = trackHeight - thumbHeight;
-
-    const scrollAmount =
-        (deltaY / maxThumbPosition) * maxScroll;
-
-    window.scrollTo(
-        0,
-        dragStartScroll + scrollAmount
-    );
-
-});
-
-document.addEventListener("mouseup", () => {
-
-    isDraggingScrollbar = false;
+    }
 
 });

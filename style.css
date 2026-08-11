@@ -471,25 +471,13 @@ footer {
 /* ===========================
    Fade In Animation
 =========================== */
-
-.hidden {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.8s ease;
-}
-
-.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
 /* ==========================
    Scroll Animations
 ========================== */
 
 .hidden {
     opacity: 0;
-    transform: translateY(60px);
+    transform: translateY(40px);
     transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
@@ -1252,14 +1240,25 @@ img {
     width: 36px;
     height: 100vh;
     z-index: 99999;
+
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+    }
+
+#custom-scrollbar.visible {
+    opacity: 1;
+    pointer-events: auto;
 }
+
 
 #scroll-thumb {
     position: absolute;
     top: 0;
     width: 100%;
-    height: 150px;
+    height: 120px;
     cursor: pointer;
+    touch-action: none;
 }
 
 #scroll-thumb img {
@@ -1277,23 +1276,6 @@ html {
 
 html::-webkit-scrollbar {
     display: none;
-}
-
-@media (max-width: 768px) {
-
-    #custom-scrollbar {
-        display: none;
-    }
-
-    html {
-        scrollbar-width: auto;
-    }
-
-    html::-webkit-scrollbar {
-        display: block;
-        width: auto;
-    }
-
 }
 
 .hero {
@@ -1374,4 +1356,130 @@ html::-webkit-scrollbar {
     background: var(--secondary-color);
 
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+body {
+    animation: pageFadeIn 0.8s ease;
+}
+
+@keyframes pageFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* =========================
+   PROJECT PAGES
+========================= */
+
+.project-page {
+    min-height: 70vh;
+    padding: 120px 20px 80px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background: var(--light-color);
+}
+
+.project-page h1 {
+    color: var(--primary-color);
+    font-size: 42px;
+    margin-bottom: 25px;
+}
+
+.project-page p {
+    max-width: 800px;
+
+    font-size: 18px;
+    line-height: 1.8;
+
+    color: var(--dark-color);
+
+    margin-bottom: 35px;
+}
+
+.project-page .project-button {
+    display: inline-block;
+
+    padding: 14px 35px;
+
+    background: var(--primary-color);
+    color: white;
+
+    border-radius: 50px;
+
+    text-decoration: none;
+
+    transition: 0.3s ease;
+}
+
+.project-page .project-button:hover {
+    transform: translateY(-3px);
+    background: var(--secondary-color);
+}
+
+@media (max-width: 768px) {
+
+    .project-page {
+        min-height: 75vh;
+        padding: 100px 20px 60px;
+    }
+
+    .project-page h1 {
+        font-size: 30px;
+    }
+
+    .project-page p {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+}
+
+.about-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    padding: 14px 32px;
+
+    background: var(--primary-color);
+    color: white;
+
+    border: 2px solid var(--primary-color);
+    border-radius: 50px;
+
+    text-decoration: none;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    box-shadow: 0 6px 18px rgba(18, 52, 71, 0.2);
+
+    transition: all 0.3s ease;
+}
+
+.about-button::before {
+    content: "📄";
+    font-size: 18px;
+}
+
+.about-button:hover {
+    background: var(--yellow-color);
+    border-color: var(--yellow-color);
+    color: var(--dark-color);
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 10px 25px rgba(244, 197, 66, 0.3);
 }
